@@ -1,0 +1,23 @@
+docker image ls 
+	查看所有以安装的镜像
+
+docker search tomcat
+	在官网中查看当前可安装的镜像
+
+docker pull tomcat
+	安装该镜像   可使用:8.5  指定版本号
+
+docker rmi tomcat
+	卸载该镜像
+
+
+docker run tomcat
+	运行该镜像
+	-it
+	启动该镜像时， 同时返回交互界面
+	--name mytomcat
+	启动该镜像时, 为镜像命名
+	-d tomcat  
+	后台运行该镜像
+	-p 123456:8080 tomcat
+	将本机12345端口映射到容器端口8080

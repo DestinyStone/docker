@@ -1,0 +1,15 @@
+作用， 通过文件的方式构建镜像
+
+1. 创建  Dockerfile 文件
+
+FROM centos[:TAG]
+	第一个命令的开始，指定基础镜像
+
+ADD a.txt /luban.jar
+	将 a.txt 复制到虚拟机的根目录下
+
+EXPOST 80
+	该镜像要暴露的端口
+
+ENTRYPOINT ["执行"， “指令参数”， “指令参数数值”]
+

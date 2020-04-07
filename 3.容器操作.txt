@@ -1,0 +1,40 @@
+docker container ps
+	查看运行中的容器
+	-a 列出所有运行的容器
+	-l  列出最后一次运行的容器
+	-n n 列出最后 n 次运行的容器
+
+docker container exec -it testtomcat /bin/bash   （attach 容易导致容器挂掉， 并且 exit 会导致容器退出， exec 不会）
+	运行该容器， 并使用/bin/bash运行， 可获取交互界面
+
+exit 容器停止退出
+ctrl + p + q 容器不停止退出
+
+docker start name
+	启动容器
+docker restart name
+	重启容器
+
+docker stop name
+	停止容器
+docker kill name
+	强制停止容器
+
+docker rm name 
+	删除容器
+	-f 强制删除
+
+
+docker top name
+	查看容器内进程
+
+docker inspect name
+	查看容器结构
+
+docker cp name:路径/文件名  路径
+	将虚拟机下的文件拷贝到宿主机
+docker cp   路径 name:路径/文件名
+	将宿主机下的文件拷贝到虚拟机
+
+docker commit -m="提交信息" -a="作者"  容器名称 生成的镜像名称
+	将容器提交成为镜像
