@@ -13,7 +13,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED BY '1314LOVE';
 
 #添加远程登录用户(这里不可使用root)
 #a.创建sakura用户
-CREATE USER 'sakura@'%' IDENTIFIED WITH mysql_native_password BY '1314LOVE';
+CREATE USER 'sakura'@'%' IDENTIFIED WITH mysql_native_password BY '1314LOVE';
 #b.赋予权限
 GRANT ALL PRIVILEGES ON *.* TO 'sakura'@'%';
 
