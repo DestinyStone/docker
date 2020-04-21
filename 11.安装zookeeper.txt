@@ -1,0 +1,19 @@
+下载Zookeeper镜像
+docker pull zookeeper
+
+启动容器并添加映射
+docker run --privileged=true -d --name zookeeper --publish 2181:2181  -d zookeeper
+
+查看容器是否启动
+docker ps
+
+配置监控中心
+如果你的zookeeper和dubbo-admin不在一台服务器上。则还要继续：
+
+到webapps/ROOT/WEB-INF下，有一个dubbo.properties文件，里面指向Zookeeper ，使用的是Zookeeper 的注册中心，如图所示。你需要将那个IP地址改成zookeeper主机的IP地址就好了。
+
+
+然后启动tomcat服务
+
+
+启动完成，172.25.10.111:8080 访问测试，默认的用户名和密码：root/root
