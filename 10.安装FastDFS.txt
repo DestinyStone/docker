@@ -1,0 +1,8 @@
+docker pull delron/fastdfs #拉取最新版本
+
+使用docker镜像构建tracker容器（跟踪服务器，起到调度的作用）：
+docker run -dti --network=host --name tracker -v /var/fdfs/tracker:/var/fdfs -v /etc/localtime:/etc/localtime delron/fastdfs tracker
+
+使用docker镜像构建storage容器（存储服务器，提供容量和备份服务）：
+docker run -dti  --network=host --name storage -e TRACKER_SERVER=192.168.56.1:22122 -v /var/fdfs/storage:/var/fdfs  -v /etc/localtime:/etc/localtime  delron/fastdfs storage
+注意： 如果使用是外网 则 ip地址 写外网的
