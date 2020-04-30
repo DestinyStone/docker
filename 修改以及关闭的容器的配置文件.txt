@@ -1,0 +1,14 @@
+1. docker inspect 容器name/id
+----------------------
+"GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/02a96f98e2e29df0cbceeedc382c0faa4ebd34565a89058a94275ea5f17158f1-init/diff:/var/lib/docker/overlay2/0b998ab5bd2567f91a8881d67593aec77e3f0cfe19dc1e0d948070813589c083/diff:/var/lib/docker/overlay2/b534a744a4441ede99c97385d685dc030683031d57c7ade2f1827123125d30cf/diff:/var/lib/docker/overlay2/07af6a207c812cee052d00b09533377edecd6774cf2ec8a20b3798af083beeaf/diff:/var/lib/docker/overlay2/2db027a5397ffbf724630f3718796f5fc0f38d3506b667f49a14861cb14a2db0/diff:/var/lib/docker/overlay2/e16d728cbeebeb78b96c0ef3f5ecfbc07318c4790834ab5187d26e1ac09a5d00/diff:/var/lib/docker/overlay2/fcba4ef004c13f2b1d2acb749f9a30c544d51bcddef9eba7c8ccde7bb07faca4/diff:/var/lib/docker/overlay2/b3edd9e519898122ce6942d78163845e1419b407a818be5d98f7f8f45e7c1abe/diff",
+                "MergedDir": "/var/lib/docker/overlay2/02a96f98e2e29df0cbceeedc382c0faa4ebd34565a89058a94275ea5f17158f1/merged",
+                "UpperDir": "/var/lib/docker/overlay2/02a96f98e2e29df0cbceeedc382c0faa4ebd34565a89058a94275ea5f17158f1/diff",
+                "WorkDir": "/var/lib/docker/overlay2/02a96f98e2e29df0cbceeedc382c0faa4ebd34565a89058a94275ea5f17158f1/work"
+            },
+
+--------------------
+关键 ： /var/lib/docker/overlay2/02a96f98e2e29df0cbceeedc382c0faa4ebd34565a89058a94275ea5f17158f1/diff  代表容器的根目录
+
+然后进入该目录找到配置文件进行修改即可
