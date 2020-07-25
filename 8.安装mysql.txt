@@ -12,6 +12,9 @@ docker exec -it mysql bash
 mysql -u root -p
 ALTER USER 'root'@'localhost' IDENTIFIED BY '1314LOVE';
 
+#刷新权限
+flush privileges
+
 #添加远程登录用户(这里不可使用root)
 #a.创建sakura用户
 CREATE USER 'sakura'@'%' IDENTIFIED WITH mysql_native_password BY '1314LOVE';
@@ -22,6 +25,10 @@ GRANT ALL PRIVILEGES ON *.* TO 'sakura'@'%';
 #登录mysql
 mysql -u root -p
 UPDATE user SET Password = PASSWORD('1314LOVE') WHERE user = 'root'
+
+#刷新权限
+flush privileges
+
 
 #添加远程登录用户(这里不可使用root)
 GRANT ALL PRIVILEGES ON *.* TO 'sakura'@'%' IDENTIFIED BY '1314LOVE' WITH GRANT OPTION;
