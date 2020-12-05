@@ -2,7 +2,7 @@
 docker pull mysql
 
 #启动
-docker run --name mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1314LOVE -d mysql
+docker run -p 3306:3306 --name mysql -v /docker/mysql/conf:/etc/mysql/conf.d -v /docker/mysql/logs:/logs -v /docker/mysql/data:/var/lib/mysql  -e MYSQL_ROOT_PASSWORD=1314LOVE -d mysql
 
 #进入容器
 docker exec -it mysql bash
